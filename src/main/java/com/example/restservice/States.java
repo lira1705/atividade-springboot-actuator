@@ -3,33 +3,38 @@ package com.example.restservice;
 
 public class States {
 
-	private String sigla;
-	private String casos;
-    private String incidencia;
-	private String mortalidade;
+	private String abbreviation;
+	private String cases;
+    private String incidence;
+	private String mortality;
+    private String name;
 
-	public States(String sigla, String casos, String incidencia, String mortalidade) {
-        super();
-		this.sigla = sigla;
-		this.casos = casos;
-        this.incidencia = incidencia;
-		this.mortalidade = mortalidade;
+	public States(String abbreviation, String cases, String incidence, String mortality, String name) {
+		this.abbreviation = abbreviation;
+		this.cases = cases;
+        this.incidence = incidence;
+		this.mortality = mortality;
+        this.name = name;
 	}
 
-    public String getSigla(){
-        return sigla;
+    public String getAbbreviation(){
+        return abbreviation;
     }
 
-    public String getCasos(){
-        return casos;
+    public String getCases(){
+        return cases;
     }
 
-    public String getIncidencia(){
-        return incidencia;
+    public String getIncidence(){
+        return incidence;
     }
 
-    public String getMortalidade(){
-        return mortalidade;
+    public String getMrtality(){
+        return mortality;
+    }
+
+    public String getName(){
+        return name;
     }
 
 }
