@@ -1,0 +1,191 @@
+[
+    {
+        "abbreviation": "GO",
+        "cases": "6.521",
+        "incidence": "92,9",
+        "mortality": "2,6",
+        "name": "Goiás"
+    },
+    {
+        "abbreviation": "DF",
+        "cases": "18.090",
+        "incidence": "599,9",
+        "mortality": "7,8",
+        "name": "Distrito Federal"
+    },
+    {
+        "abbreviation": "MT",
+        "cases": "4.339",
+        "incidence": "124,5",
+        "mortality": "3,9",
+        "name": "Mato Grosso"
+    },
+    {
+        "abbreviation": "MS",
+        "cases": "2.455",
+        "incidence": "88,3",
+        "mortality": "0,8",
+        "name": "Mato Grosso do Sul"
+    },
+    {
+        "abbreviation": "RS",
+        "cases": "12.802",
+        "incidence": "112,5",
+        "mortality": "2,6",
+        "name": "Rio Grande do Sul"
+    },
+    {
+        "abbreviation": "PR",
+        "cases": "7.314",
+        "incidence": "64,0",
+        "mortality": "2,2",
+        "name": "Paraná"
+    },
+    {
+        "abbreviation": "SC",
+        "cases": "12.192",
+        "incidence": "170,2",
+        "mortality": "2,5",
+        "name": "Santa Catarina"
+    },
+    {
+        "abbreviation": "AP",
+        "cases": "13.771",
+        "incidence": "1628,3",
+        "mortality": "33,7",
+        "name": "Amapá"
+    },
+    {
+        "abbreviation": "RO",
+        "cases": "9.220",
+        "incidence": "518,8",
+        "mortality": "14,3",
+        "name": "Rondônia"
+    },
+    {
+        "abbreviation": "PA",
+        "cases": "59.148",
+        "incidence": "687,5",
+        "mortality": "44,8",
+        "name": "Pará"
+    },
+    {
+        "abbreviation": "RR",
+        "cases": "6.056",
+        "incidence": "999,7",
+        "mortality": "27,7",
+        "name": "Roraima"
+    },
+    {
+        "abbreviation": "AC",
+        "cases": "8.457",
+        "incidence": "958,9",
+        "mortality": "25,3",
+        "name": "Acre"
+    },
+    {
+        "abbreviation": "TO",
+        "cases": "6.052",
+        "incidence": "384,8",
+        "mortality": "7,2",
+        "name": "Tocantins"
+    },
+    {
+        "abbreviation": "AM",
+        "cases": "51.234",
+        "incidence": "1236,2",
+        "mortality": "55,9",
+        "name": "Amazonas"
+    },
+    {
+        "abbreviation": "PE",
+        "cases": "41.010",
+        "incidence": "429,1",
+        "mortality": "36,1",
+        "name": "Pernambuco"
+    },
+    {
+        "abbreviation": "BA",
+        "cases": "30.481",
+        "incidence": "204,9",
+        "mortality": "6,3",
+        "name": "Bahia"
+    },
+    {
+        "abbreviation": "PB",
+        "cases": "22.452",
+        "incidence": "558,8",
+        "mortality": "13,3",
+        "name": "Paraíba"
+    },
+    {
+        "abbreviation": "AL",
+        "cases": "17.193",
+        "incidence": "515,2",
+        "mortality": "19,2",
+        "name": "Alagoas"
+    },
+    {
+        "abbreviation": "SE",
+        "cases": "10.126",
+        "incidence": "440,5",
+        "mortality": "11,0",
+        "name": "Sergipe"
+    },
+    {
+        "abbreviation": "PI",
+        "cases": "7.927",
+        "incidence": "242,2",
+        "mortality": "8,1",
+        "name": "Piauí"
+    },
+    {
+        "abbreviation": "CE",
+        "cases": "68.384",
+        "incidence": "748,8",
+        "mortality": "47,2",
+        "name": "Ceará"
+    },
+    {
+        "abbreviation": "MA",
+        "cases": "52.069",
+        "incidence": "735,9",
+        "mortality": "18,2",
+        "name": "Maranhão"
+    },
+    {
+        "abbreviation": "RN",
+        "cases": "11.027",
+        "incidence": "314,4",
+        "mortality": "13,1",
+        "name": "Rio Grande do Norte"
+    },
+    {
+        "abbreviation": "SP",
+        "cases": "150.138",
+        "incidence": "327,0",
+        "mortality": "20,7",
+        "name": "São Paulo"
+    },
+    {
+        "abbreviation": "ES",
+        "cases": "21.964",
+        "incidence": "546,6",
+        "mortality": "22,5",
+        "name": "Espírito Santo"
+    },
+    {
+        "abbreviation": "RJ",
+        "cases": "72.979",
+        "incidence": "422,7",
+        "mortality": "40,1",
+        "name": "Rio de Janeiro"
+    },
+    {
+        "abbreviation": "MG",
+        "cases": "16.102",
+        "incidence": "76,1",
+        "mortality": "1,9",
+        "name": "Minas Gerais"
+    }
+]
