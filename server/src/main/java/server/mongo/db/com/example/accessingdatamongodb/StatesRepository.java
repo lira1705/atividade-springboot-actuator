@@ -1,10 +1,8 @@
-package com.example.accessingdatamongodb;
-
-import java.util.List;
+package server.mongo.db.com.example.accessingdatamongodb;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface StatesRepository extends MongoRepository<States, String> {
+public interface StatesRepository extends MongoRepository<State, String> {
 
-  public States findByAbbreviation(String abbreviation);
+  public State findByAbbreviation(String abbreviation);
 }

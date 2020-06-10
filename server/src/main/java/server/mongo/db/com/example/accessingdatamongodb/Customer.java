@@ -1,4 +1,4 @@
-package com.example.accessingdatamongodb;
+package server.mongo.db.com.example.accessingdatamongodb;
 
 import org.springframework.data.annotation.Id;
 

@@ -1,7 +1,7 @@
-package com.example.accessingdatamongodb;
+package server.mongo.db.com.example.accessingdatamongodb;
 
 
-public class States {
+public class State {
 
 	private String abbreviation;
 	private String cases;
@@ -9,12 +9,12 @@ public class States {
 	private String mortality;
     private String name;
 
-	public States(String abbreviation, String cases, String incidence, String mortality, String name) {
+	public State(String abbreviation, String cases, String incidence, String mortality, String name) {
 		this.abbreviation = abbreviation;
 		this.cases = cases;
-    this.incidence = incidence;
+        this.incidence = incidence;
 		this.mortality = mortality;
-    this.name = name;
+        this.name = name;
 	}
 
     public String getAbbreviation(){
@@ -29,12 +29,16 @@ public class States {
         return incidence;
     }
 
-    public String getMrtality(){
+    public String getMortality(){
         return mortality;
     }
 
     public String getName(){
         return name;
+    }
+
+    public String toString() {
+	    return this.abbreviation + ": [cases: " + this.cases + ", incidence: " + this.incidence + ", mortality: " + this.mortality + "]";
     }
 
 }

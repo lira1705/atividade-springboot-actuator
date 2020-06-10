@@ -1,16 +1,16 @@
-package com.example.accessingdatamongodb;
+package server.mongo.db.com.example.accessingdatamongodb;
 
 import java.io.FileNotFoundException;
+
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.FileReader;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.*;
-import org.json.*;
+
 import java.io.IOException;
 import java.util.*;
 
@@ -22,19 +22,21 @@ public class AccessingDataMongodbApplication {
   private static StatesRepository repository;
 
   public static void main(String[] args) {
-    SpringApplication.run(AccessingDataMongodbApplication.class, args);
-    AccessingDataMongodbApplication.showJson();
+      SpringApplication.run(AccessingDataMongodbApplication.class, args);
+      AccessingDataMongodbApplication.showJson();
   }
 
   public static void showJson() {
     JSONParser jsonParser = new JSONParser();
     try (FileReader file = new FileReader("states.json")) {
-      Object obj = jsonParser.parse(file);
-      JSONArray stateList = (JSONArray) obj;
-      List<States> states = (List<States>) (JSONArray) stateList;
-      for (States state : states) {
-        System.out.println(state);
-      }
+        Object obj = jsonParser.parse(file);
+        JSONArray stateList = (JSONArray) obj;
+//      System.out.println(stateList);
+        List<State> states = new ArrayList<State>();
+        stateList.forEach(st -> addState((JSONObject) st, states));
+        for (State state : states) {
+            System.out.println(state);
+        }
       // for (States state : states) {
       //   AccessingDataMongodbApplication.repository.save(state);
       // }
@@ -48,6 +50,15 @@ public class AccessingDataMongodbApplication {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+  }
+
+  public static void addState(JSONObject s, List<State> stateList) {
+        String abb = (String) s.get("abbreviation");
+        String cases = (String) s.get("cases");
+        String incidence = (String) s.get("incidence");
+        String mortality = (String) s.get("mortality");
+        String name = (String) s.get("name");
+        stateList.add(new State(abb, cases, incidence, mortality, name));
   }
 
   // @Override
