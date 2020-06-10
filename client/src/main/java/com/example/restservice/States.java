@@ -29,7 +29,7 @@ public class States {
         return incidence;
     }
 
-    public String getMrtality(){
+    public String getMortality(){
         return mortality;
     }
 

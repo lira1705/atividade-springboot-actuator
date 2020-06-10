@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.web.client.RestTemplate;
+import java.util.ArrayList;
 
 @RestController
 public class QuoteController {
@@ -26,6 +27,28 @@ public class QuoteController {
 		return new RestTemplate();
 	}
 
+
+	@GetMapping("/states")
+	public ArrayList<States> goToStates(){
+		return getAllStates();
+	}
+
+	public ArrayList<States> getAllStates(){
+        ArrayList<States> array = new ArrayList<>();
+		array.add(new States("GO", "6.521", "92.9", "2.6", "Goiás"));
+		return array;
+    }
+
+	@GetMapping("/state")
+	public States goToState(@RequestParam(value = "abbreviation", defaultValue = "PE")  String abbreviation){
+		for(States state : getAllStates()) { 
+			if(state.getAbbreviation().equals(abbreviation)) { 
+				return state;
+			}
+		}
+		return null;
+	}
+	
 	public Quote run(RestTemplate restTemplate) {
     return restTemplate.getForObject(
         "https://gturnquist-quoters.cfapps.io/api/random", Quote.class);
