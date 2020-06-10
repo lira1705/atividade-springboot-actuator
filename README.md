@@ -26,3 +26,10 @@
     - Returns all states covid informations.
   - "localhost:8080/states/pe"
     - Returns pernambuco covid informations.
+
+### Twelve Factors
+  - **This application follows the following standards of the twelve factors**
+    - Codebase
+    - Dependencies
+    - Portbinding
+    - Backing Services
