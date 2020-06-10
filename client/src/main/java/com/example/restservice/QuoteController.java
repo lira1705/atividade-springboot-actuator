@@ -34,7 +34,7 @@ public class QuoteController {
 		return new RestTemplate();
 	}
 
-	@ApiOperation(value="Retorna uma lista de Estados")
+	@ApiOperation(value="Retorna uma lista de estados")
 	@GetMapping("/states")
 	public ArrayList<States> goToStates(){
 		return getAllStates();
