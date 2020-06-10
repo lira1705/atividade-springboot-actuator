@@ -51,9 +51,9 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
             for (State state : states) {
                 repository.save(state);
             }
-            for (State state : repository.findAll()) {
-                System.out.println(state);
-            }
+//            for (State state : repository.findAll()) {
+//                System.out.println(state);
+//            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

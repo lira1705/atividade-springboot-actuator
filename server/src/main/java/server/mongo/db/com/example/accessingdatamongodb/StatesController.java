@@ -4,6 +4,8 @@ package server.mongo.db.com.example.accessingdatamongodb;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -22,12 +24,18 @@ public class StatesController {
 		return getAllStates();
 	}
 
-  public ArrayList<State> getAllStates() {
+    public ArrayList<State> getAllStates() {
     ArrayList<State> states = new ArrayList<>();
     for (State state : repository.findAll()) {
-      states.add(state);
+        states.add(state);
     }
-    System.out.println(states); 
-    return states;
-  }
+//        System.out.println(states);
+        return states;
+    }
+
+
+    @GetMapping("/states/{abbreviation}")
+    public State getState(@PathVariable String abbreviation) {
+        return repository.findByAbbreviation(abbreviation);
+    }
 }
