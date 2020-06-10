@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.FileReader;
@@ -16,40 +17,13 @@ import java.util.*;
 
 
 @SpringBootApplication
-public class AccessingDataMongodbApplication {
+public class AccessingDataMongodbApplication implements CommandLineRunner {
 
   @Autowired
-  private static StatesRepository repository;
+  private StatesRepository repository;
 
   public static void main(String[] args) {
       SpringApplication.run(AccessingDataMongodbApplication.class, args);
-      AccessingDataMongodbApplication.showJson();
-  }
-
-  public static void showJson() {
-    JSONParser jsonParser = new JSONParser();
-    try (FileReader file = new FileReader("states.json")) {
-        Object obj = jsonParser.parse(file);
-        JSONArray stateList = (JSONArray) obj;
-//      System.out.println(stateList);
-        List<State> states = new ArrayList<State>();
-        stateList.forEach(st -> addState((JSONObject) st, states));
-        for (State state : states) {
-            System.out.println(state);
-        }
-      // for (States state : states) {
-      //   AccessingDataMongodbApplication.repository.save(state);
-      // }
-      // for (States state : AccessingDataMongodbApplication.repository.findAll()) {
-      //   System.out.println(state);
-      // }
-    } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
   }
 
   public static void addState(JSONObject s, List<State> stateList) {
@@ -61,7 +35,36 @@ public class AccessingDataMongodbApplication {
         stateList.add(new State(abb, cases, incidence, mortality, name));
   }
 
-  // @Override
+    @Override
+    public void run(String... args) throws Exception {
+        repository.deleteAll();
+
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader file = new FileReader("states.json")) {
+            Object obj = jsonParser.parse(file);
+            JSONArray stateList = (JSONArray) obj;
+            List<State> states = new ArrayList<State>();
+            stateList.forEach(st -> addState((JSONObject) st, states));
+//            for (State state : states) {
+//                System.out.println(state);
+//            }
+            for (State state : states) {
+                repository.save(state);
+            }
+            for (State state : repository.findAll()) {
+                System.out.println(state);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    // @Override
   // public void run(String... args) throws Exception {
 
   //   repository.deleteAll();

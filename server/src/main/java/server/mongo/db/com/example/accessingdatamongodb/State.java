@@ -1,9 +1,13 @@
 package server.mongo.db.com.example.accessingdatamongodb;
 
 
+import org.springframework.data.annotation.Id;
+
 public class State {
 
+    @Id
 	private String abbreviation;
+
 	private String cases;
     private String incidence;
 	private String mortality;
