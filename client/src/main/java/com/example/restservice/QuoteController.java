@@ -56,6 +56,24 @@ public class QuoteController {
 		}
 		return null;
 	}
+
+	@ApiOperation(value="Atualiza informação de um estado")
+	@PostMapping("/state")
+	public String refreshState() {
+		return "1";
+	}
+
+	@ApiOperation(value="Salva informação de um estado")
+	@PutMapping("/state")
+	public String saveState() {
+		return "1";
+	}
+
+	@ApiOperation(value="Remove informação de um estado")
+	@DeleteMapping("/state")
+	public String deleteState() {
+		return "1";
+	}
 	
 	public Quote run(RestTemplate restTemplate) {
     return restTemplate.getForObject(
