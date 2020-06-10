@@ -1,7 +1,7 @@
 package com.example.restservice;
 
 
-public class States {
+public class State {
 
 	private String abbreviation;
 	private String cases;
@@ -9,7 +9,7 @@ public class States {
 	private String mortality;
     private String name;
 
-	public States(String abbreviation, String cases, String incidence, String mortality, String name) {
+	public State(String abbreviation, String cases, String incidence, String mortality, String name) {
 		this.abbreviation = abbreviation;
 		this.cases = cases;
         this.incidence = incidence;
