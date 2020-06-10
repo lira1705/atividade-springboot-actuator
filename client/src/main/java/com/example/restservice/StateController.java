@@ -23,7 +23,7 @@ public class StateController {
 		return new RestTemplate();
 	}
 
-	@ApiOperation(value="Retorna uma lista de estados")
+	@ApiOperation(value="Returns all states")
 	@GetMapping("/states")
 	public List<Object> goToStates(){
 		ResponseEntity<Object[]> responseEntity = restTemplate.getForEntity("http://localhost:8090/states", Object[].class);
@@ -32,7 +32,7 @@ public class StateController {
 	}
 
 
-	@ApiOperation(value="Retorna informação de um estado")
+	@ApiOperation(value="Returns information about a state")
 	@GetMapping("/states/{abbreviation}")
 	public ResponseEntity<Object> goToState(@PathVariable String abbreviation){
 		Object s =  restTemplate.getForObject("http://localhost:8090/states/" + abbreviation.toUpperCase(), Object.class);
@@ -42,19 +42,19 @@ public class StateController {
 		return new ResponseEntity<Object>(s, HttpStatus.OK);
 	}
 
-	@ApiOperation(value="Atualiza informação de um estado")
+	@ApiOperation(value="Saves a state")
 	@PostMapping("/state")
 	public String refreshState() {
 		return "1";
 	}
 
-	@ApiOperation(value="Salva informação de um estado")
+	@ApiOperation(value="Updates the information of a state")
 	@PutMapping("/state")
 	public String saveState() {
 		return "1";
 	}
 
-	@ApiOperation(value="Remove informação de um estado")
+	@ApiOperation(value="Delete a state")
 	@DeleteMapping("/state")
 	public String deleteState() {
 		return "1";
