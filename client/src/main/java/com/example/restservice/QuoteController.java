@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import java.util.ArrayList;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -48,13 +50,13 @@ public class QuoteController {
 
 	@ApiOperation(value="Retorna informação de um estado")
 	@GetMapping("/state")
-	public States goToState(@RequestParam(value = "abbreviation", defaultValue = "PE")  String abbreviation){
+	public ResponseEntity<States> goToState(@RequestParam(value = "abbreviation", defaultValue = "PE")  String abbreviation){
 		for(States state : getAllStates()) { 
 			if(state.getAbbreviation().equals(abbreviation)) { 
-				return state;
+				return new ResponseEntity<States>(state, HttpStatus.OK);
 			}
 		}
-		return null;
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 
 	@ApiOperation(value="Atualiza informação de um estado")
