@@ -44,20 +44,35 @@ public class StateController {
 
 	@ApiOperation(value="Saves a state")
 	@PostMapping("/state")
-	public String refreshState() {
-		return "1";
+	public ResponseEntity<Object> refreshState(@RequestBody State state) {
+		System.out.println(state);
+		Object s =  restTemplate.postForObject("http://localhost:8090/state/" ,state, Object.class);
+		if (s == null) {
+			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Object>(state, HttpStatus.OK);
 	}
 
 	@ApiOperation(value="Updates the information of a state")
 	@PutMapping("/state")
-	public String saveState() {
-		return "1";
+	public ResponseEntity<Object> saveState(@RequestBody State state) {
+		System.out.println(state);
+		Object s =  restTemplate.postForObject("http://localhost:8090/state/" ,state, Object.class);
+		if (s == null) {
+			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Object>(state, HttpStatus.OK);
 	}
 
 	@ApiOperation(value="Delete a state")
 	@DeleteMapping("/state")
-	public String deleteState() {
-		return "1";
+	public ResponseEntity<Object> deleteState(@RequestBody State state) {
+		System.out.println(state);
+		Object s =  restTemplate.postForObject("http://localhost:8090/state/" ,state, Object.class);
+		if (s == null) {
+			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Object>(state, HttpStatus.OK);
 	}
 
 }
