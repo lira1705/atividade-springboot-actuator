@@ -33,3 +33,8 @@
     - Dependencies
     - Portbinding
     - Backing Services
+
+### Participants
+  - João Pedro Lira dos Santos (jpls)
+  - José Reginaldo de Barros Junior (jrbj)
+  - Leão Liu Masur (llm2)
