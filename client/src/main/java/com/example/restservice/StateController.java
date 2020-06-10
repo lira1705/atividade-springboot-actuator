@@ -3,6 +3,8 @@ package com.example.restservice;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,9 +34,12 @@ public class StateController {
 
 	@ApiOperation(value="Retorna informação de um estado")
 	@GetMapping("/states/{abbreviation}")
-	public Object goToState(@PathVariable String abbreviation){
+	public ResponseEntity<Object> goToState(@PathVariable String abbreviation){
 		Object s =  restTemplate.getForObject("http://localhost:8090/states/" + abbreviation, Object.class);
-		return s;
+		if (s == null) {
+			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Object>(s, HttpStatus.OK);
 	}
 
 	@ApiOperation(value="Atualiza informação de um estado")
