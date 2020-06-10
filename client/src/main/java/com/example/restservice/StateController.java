@@ -35,7 +35,7 @@ public class StateController {
 	@ApiOperation(value="Retorna informação de um estado")
 	@GetMapping("/states/{abbreviation}")
 	public ResponseEntity<Object> goToState(@PathVariable String abbreviation){
-		Object s =  restTemplate.getForObject("http://localhost:8090/states/" + abbreviation, Object.class);
+		Object s =  restTemplate.getForObject("http://localhost:8090/states/" + abbreviation.toUpperCase(), Object.class);
 		if (s == null) {
 			return new ResponseEntity<Object>(HttpStatus.NOT_FOUND);
 		}
